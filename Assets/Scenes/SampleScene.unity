@@ -7249,7 +7249,6 @@ GameObject:
   - component: {fileID: 1438930103}
   - component: {fileID: 1438930102}
   - component: {fileID: 1438930106}
-  - component: {fileID: 1438930105}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -7324,22 +7323,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1746142276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1438930105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438930101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1be843cc100b84084e6248e78959b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptUI: {fileID: 0}
-  textBoxUI: {fileID: 0}
-  interactionText: {fileID: 1875805314}
-  message: Old photo. He has not called her in months.
 --- !u!61 &1438930106
 BoxCollider2D:
   m_ObjectHideFlags: 0
