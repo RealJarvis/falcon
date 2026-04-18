@@ -1,16 +1,23 @@
 using UnityEngine;
 using TMPro;
 
-public class InteractableObject : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
     public GameObject promptUI;
     public GameObject textBoxUI;
     public TMP_Text interactionText;
+    public bool isBed = false;
     public int unlockAtScroll = 5;
     private bool isUnlocked = false;
 
     [TextArea(2, 5)]
-    public string message = "Old photo. I have not seen her in months, we were good friends once... should've called her";
+    public string[] messages = {
+        "Night 1 text.",
+        "Night 2 text.",
+        "Night 3 text.",
+        "Night 4 text."
+    };
+
     private bool playerNearby = false;
     private bool textOpen = false;
 
@@ -22,23 +29,21 @@ public class InteractableObject : MonoBehaviour
 
     void Update()
     {
-        if (!isUnlocked)
-        {
-            if (ScrollTracker.Instance != null && ScrollTracker.Instance.totalPostsScrolled >= unlockAtScroll)
-            {
-                isUnlocked = true;
-            }
-            return;
-        }
+        if (!isUnlocked) return;
 
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
             textOpen = !textOpen;
             if (textOpen)
             {
-                interactionText.text = message;
+                int night = NightManager.Instance != null ? NightManager.Instance.currentNight - 1 : 0;
+                night = Mathf.Clamp(night, 0, messages.Length - 1);
+                interactionText.text = messages[night];
                 textBoxUI.SetActive(true);
                 promptUI.SetActive(false);
+
+                if (isBed)
+                    NightManager.Instance.GoToSleep();
             }
             else
             {
