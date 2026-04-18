@@ -7338,7 +7338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptUI: {fileID: 0}
   textBoxUI: {fileID: 0}
-  interactionText: {fileID: 0}
+  interactionText: {fileID: 1875805314}
   message: Old photo. He has not called her in months.
 --- !u!61 &1438930106
 BoxCollider2D:
