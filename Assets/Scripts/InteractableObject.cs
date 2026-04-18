@@ -10,7 +10,12 @@ public class InteractableObject : MonoBehaviour
     private bool isUnlocked = false;
 
     [TextArea(2, 5)]
-    public string message = "Old photo. I have not seen her in months, we were good friends once... should've called her";
+    public string[] messages = {
+        "Night 1 text.",
+        "Night 2 text.",
+        "Night 3 text.",
+        "Night 4 text."
+    };
     private bool playerNearby = false;
     private bool textOpen = false;
 
@@ -36,7 +41,10 @@ public class InteractableObject : MonoBehaviour
             textOpen = !textOpen;
             if (textOpen)
             {
-                interactionText.text = message;
+                if (NightManager.Instance != null) NightManager.Instance.RegisterInteraction();
+                int night = NightManager.Instance != null ? NightManager.Instance.currentNight - 1 : 0;
+                night = Mathf.Clamp(night, 0, messages.Length - 1);
+                interactionText.text = messages[night];
                 textBoxUI.SetActive(true);
                 promptUI.SetActive(false);
             }
