@@ -6,7 +6,7 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private string gameSceneName = "SampleScene";
+    [SerializeField] private string gameSceneName = "GameMain";
     [SerializeField] private Image fadeOverlay;
     [SerializeField] private AudioSource menuMusic;
     [SerializeField] private TMP_Text loadingText;
