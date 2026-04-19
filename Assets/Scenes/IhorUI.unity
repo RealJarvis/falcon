@@ -156,8 +156,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: She hated how I made coffee. She said it tasted like a printer ran out
-    of hope.
+  unlockAtScroll: 5
+  messages:
+  - cold coffee. you made it an hour ago and forgot.
+  - you've been drinking too much coffee. sleeping too little.
+  - the machine is still on. you forgot to turn it off again.
+  - you turn it off. small thing. real thing.
 --- !u!61 &86646540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -304,8 +308,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: This photo... it was a long time ago.... I have not seen her in months...
-    should've called her on her birthday
+  unlockAtScroll: 5
+  messages:
+  - old photo. you haven't called her in months.
+  - she called twice this week. you didn't pick up.
+  - her birthday was yesterday. you didn't call.
+  - three voicemails. you haven't listened to them.
 --- !u!61 &135230858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,9 +481,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: Alice gave me one of these books and told me I would understand it when
-    I was older. I said that I read it so she would think I was smart, haha, but
-    she knew I was pretending
+  unlockAtScroll: 5
+  messages:
+  - books you meant to read. sketchbooks you meant to fill.
+  - you haven't opened any of these in months.
+  - you used to have an inner life. it's still in here somewhere.
+  - all these things you were going to do. still here. still waiting.
 --- !u!61 &1032262321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -622,9 +633,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: "We used to plan a future here. A small apartment, a dog, stupid yellow
-    curtains. Later, all I could say was, \u201CWhat\u2019s the point?\u201D, I saw
-    how disappointed she was..."
+  unlockAtScroll: 5
+  messages:
+  - someone else is awake across the way. you are not alone.
+  - the sky looks slightly different tonight. you can't explain it.
+  - sirens somewhere in the distance. getting closer.
+  - stars. just a few. between the buildings. you almost missed them.
 --- !u!61 &1122466653
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -771,9 +785,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: 'Hiking in the Alps... I felt so much more alive back then. Alice took
-    a huge jacket because, she thought it would be too cold, it was so funny, she
-    could not ski properly in those clothes ahah '
+  unlockAtScroll: 5
+  messages:
+  - a drawing you made years ago. you were good at this.
+  - you used to draw every day. you stopped when good wasn't enough.
+  - the sketchbooks are still here. untouched for weeks.
+  - you open one. the drawings are good. really good. you forgot.
 --- !u!61 &1296888738
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -859,7 +876,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1741291545, guid: 0c7602d7a7fc0974e91389bbc8d7de7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -920,9 +937,12 @@ MonoBehaviour:
   promptUI: {fileID: 680345284}
   textBoxUI: {fileID: 296799949}
   interactionText: {fileID: 779369792}
-  message: "She sat beside me watching movies while I was scrolling all the time.
-    She laughed once and looked at me. I didn\u2019t look back. I still remember
-    her face falling."
+  unlockAtScroll: 5
+  messages:
+  - you've spent a lot of time here lately.
+  - this is where you sit. this is where you scroll. every night.
+  - the indent in the cushion. that's you. that's where you've been.
+  - you could get up. you could leave. the door is right there.
 --- !u!61 &1306718135
 BoxCollider2D:
   m_ObjectHideFlags: 0

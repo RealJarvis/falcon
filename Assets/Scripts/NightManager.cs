@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NightManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class NightManager : MonoBehaviour
     public Image fadePanel;
     public TextMeshProUGUI nightText;
     public FeedManager feedManager;
+    public int interactionCount = 0;
 
     void Awake()
     {
@@ -25,14 +27,22 @@ public class NightManager : MonoBehaviour
     IEnumerator NextNight()
     {
         yield return StartCoroutine(Fade(0, 1, 1.5f));
-
         currentNight++;
 
         foreach (Interactable obj in FindObjectsOfType<Interactable>())
         {
             obj.ForceClose();
+            obj.SetUnlocked(false);
         }
+
+        foreach (InteractableObject obj in FindObjectsOfType<InteractableObject>())
+        {
+            obj.ForceClose();
+            obj.SetUnlocked(false);
+        }
+
         ScrollTracker.Instance.ResetScroll();
+
         if (currentNight > totalNights)
         {
             ShowEnding();
@@ -41,7 +51,6 @@ public class NightManager : MonoBehaviour
 
         nightText.gameObject.SetActive(true);
         nightText.text = "Night " + currentNight;
-
         feedManager.NextNight();
 
         yield return new WaitForSeconds(2f);
@@ -64,9 +73,16 @@ public class NightManager : MonoBehaviour
         }
     }
 
+    public void RegisterInteraction()
+    {
+        interactionCount++;
+    }
+    
     void ShowEnding()
     {
-        nightText.gameObject.SetActive(true);
-        nightText.text = "— resist ruination —";
+        if (interactionCount >= 10)
+            SceneManager.LoadScene("GoodEnding");
+        else
+            SceneManager.LoadScene("BadEnding");
     }
 }
