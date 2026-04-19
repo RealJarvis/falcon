@@ -2,12 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private string gameSceneName = "SampleScene";
     [SerializeField] private Image fadeOverlay;
     [SerializeField] private AudioSource menuMusic;
+    [SerializeField] private TMP_Text loadingText;
     [SerializeField] private float fadeDuration = 2f;
     [SerializeField] private float musicFadeDuration = 1.5f;
 
@@ -21,11 +23,15 @@ public class MainMenuController : MonoBehaviour
             c.a = 0f;
             fadeOverlay.color = c;
         }
+
+        if (loadingText != null)
+        {
+            loadingText.gameObject.SetActive(false);
+        }
     }
 
     public void StartGame()
     {
-        Debug.Log("BUTTON WORKS");
         if (isStarting) return;
         isStarting = true;
         StartCoroutine(StartGameRoutine());
@@ -33,16 +39,23 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator StartGameRoutine()
     {
-        float timer = 0f;
+        // if (loadingText != null)
+        // {
+        //     loadingText.gameObject.SetActive(true);
+        // }
 
-        float startVolume = 1f;
-        if (menuMusic != null)
-            startVolume = menuMusic.volume;
+        float timer = 0f;
+        float startVolume = menuMusic != null ? menuMusic.volume : 1f;
 
         while (timer < fadeDuration)
         {
             timer += Time.deltaTime;
-            float t = timer / fadeDuration;
+            float t = Mathf.Clamp01(timer / fadeDuration);
+
+            if (loadingText != null && t > 0.7f && !loadingText.gameObject.activeSelf)
+{
+    loadingText.gameObject.SetActive(true);
+}
 
             if (fadeOverlay != null)
             {
