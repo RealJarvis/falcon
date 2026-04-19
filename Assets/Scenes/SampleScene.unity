@@ -6329,6 +6329,7 @@ MonoBehaviour:
   fadePanel: {fileID: 1863228353}
   nightText: {fileID: 1894325924}
   feedManager: {fileID: 1246172714}
+  interactionCount: 0
 --- !u!4 &1145159681
 Transform:
   m_ObjectHideFlags: 0

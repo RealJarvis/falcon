@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 7fc6c0210e5f37ea19933875bc344090
+guid: b6657f627f74a50439b1ce0392285182
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - promptUI: {instanceID: 0}
-  - textBoxUI: {instanceID: 0}
-  - interactionText: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
